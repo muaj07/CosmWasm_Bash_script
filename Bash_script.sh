@@ -39,7 +39,7 @@ rustup target add wasm32-unknown-unknown
 rm -rf wasmd
 git clone https://github.com/CosmWasm/wasmd.git
 cd wasmd
-git checkout v0.21.0
+git checkout v0.27.0
 make install
 
 # verify the installation
@@ -49,6 +49,5 @@ wasmd version
 curl -sSL https://raw.githubusercontent.com/CosmWasm/testnets/master/malaga-420/defaults.env -o defaults.env
 . defaults.env
 echo ". $HOME/defaults.env" >> ~/.bash_profile
-
 echo 'export NODE="--node $RPC"'  >> ~/.bash_profile
-echo 'export TXFLAG="${NODE} --chain-id ${CHAIN_ID} --gas-prices 0.015umlg --gas auto --gas-adjustment 1.5"' >> ~/.bash_profile
+echo 'export TXFLAG="${NODE} --chain-id ${CHAIN_ID} --gas-prices 0.025umlg --gas auto --gas-adjustment 1.3"' >> ~/.bash_profile
