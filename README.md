@@ -1,0 +1,1 @@
+# CosmWasm_Bash_script
