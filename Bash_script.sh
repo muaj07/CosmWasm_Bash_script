@@ -27,6 +27,7 @@ rm go1.18.2.linux-amd64.tar.gz
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source $HOME/.cargo/env
 echo "source $HOME/.cargo/env" >> ~/.bash_profile
 
 rustup default stable
@@ -35,9 +36,10 @@ rustup target list --installed
 rustup target add wasm32-unknown-unknown
 
 # install wasmd
+rm -rf wasmd
 git clone https://github.com/CosmWasm/wasmd.git
 cd wasmd
-git checkout v0.27.0
+git checkout v0.21.0
 make install
 
 # verify the installation
