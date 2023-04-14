@@ -25,9 +25,9 @@ echo 'source ~/.bash_profile' >> /etc/bash.bashrc
 
 rm go1.18.2.linux-amd64.tar.gz
 
-# install rust
+# Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-source $HOME/.cargo/env
+. $HOME/.cargo/env
 echo "source $HOME/.cargo/env" >> ~/.bash_profile
 
 rustup default stable
@@ -45,8 +45,10 @@ make install
 # verify the installation
 wasmd version
 
-eval "$(curl -sSL https://raw.githubusercontent.com/CosmWasm/testnets/master/malaga-420/defaults.env)"
+# Download the environment file and source it
+curl -sSL https://raw.githubusercontent.com/CosmWasm/testnets/master/malaga-420/defaults.env -o defaults.env
+. defaults.env
+echo ". $HOME/defaults.env" >> ~/.bash_profile
 
-echo 'eval "$(curl -sSL https://raw.githubusercontent.com/CosmWasm/testnets/master/malaga-420/defaults.env)"' >> ~/.bash_profile
 echo 'export NODE="--node $RPC"'  >> ~/.bash_profile
 echo 'export TXFLAG="${NODE} --chain-id ${CHAIN_ID} --gas-prices 0.015umlg --gas auto --gas-adjustment 1.5"' >> ~/.bash_profile
