@@ -8,5 +8,8 @@ Before we start setting up the development environment, please make sure you hav
 A Linux-based operating system (Ubuntu is used in this case)
 Basic understanding of Bash scripting and the command line
 
+## Reference
+All the steps for setting up development environment for CosmWasm are also covered in [the medium article](https://medium.com/@ajml/setting-up-development-environment-for-cosmwasm-ec19c917fc6).
+
 
 
